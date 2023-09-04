@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIL&TIN</title>
+    <style>
+        /* Dark theme CSS */
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        input[type="text"], input[type="number"], button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #333333;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            cursor: pointer;
+            background-color: #007BFF;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .values{
+            display: flex;
+        }
+        .values>h1{
+            width: 190%;
+        }
+        .values>h2{
+            width: 190%;
+        }
+        .values>input{
+            width: 20%;
+        }
+        h3{
+            width: 90%;
+            display: inline-block;
+        }
+        .slide1>h1{
+            margin: 40px 0;
+        }
+        .none{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="slide1">
+        <form id="okok">
+        <h1 id="date">HELLO</h1>
+        <label id="hh" for="looseprice">Enter LOOSE PRICE OF TODAY</label>
+        <input required type="number" id="looseprice">
+        <button>NEXT</button>
+        </form>
+    </div>
+
+        <div id="slide2" class="slide2 none">
+            <h1>FREIGIT RATES AS PER BELOW</h1>
+            <div class="values">
+                <h1>AGRA</h1>
+                <input id="agraFrigit" type="text" >
+            </div>
+            <div class="values">
+                <h1>Chandighar</h1>
+                <input id="chandigharFrigit" type="text"   >
+            </div>
+            <div class="values">
+                <h1>Damtal</h1>
+                <input id="damtalFrigit" type="text"   >
+            </div>
+            <div class="values">
+                <h1>Dehradun</h1>
+                <input id="dehradunFrigit" type="text"   >
+            </div>
+            <div class="values">
+                <h1>Ex Plant</h1>
+                <input id="ExPlantFrigit" type="text"   >
+            </div>
+            <div class="values">
+                <h1>Delhi</h1>
+                <input id="delhiFrigit" type="text"   >
+            </div>
+            <button onclick="hellobuddy()">Next</button>
+        </div>
+
+        <div id="slide3" class="slide3 none">
+            <h1>CFA RATES AS PER BELOW</h1>
+            <div class="values">
+                <h1>AGRA</h1>
+                <input id="agracfa" type="text" >
+            </div>
+            <div class="values">
+                <h1>Chandighar</h1>
+                <input id="chandigharcfa" type="text"   >
+            </div>
+            <div class="values">
+                <h1>Damtal</h1>
+                <input id="damtalcfa" type="text"   >
+            </div>
+            <div class="values">
+                <h1>Dehradun</h1>
+                <input id="dehraduncfa" type="text"   >
+            </div>
+            <div class="values">
+                <h1>Ex Plant</h1>
+                <input id="ExPlantcfa" type="text"   >
+            </div>
+            <div class="values">
+                <h1>Delhi</h1>
+                <input id="delhicfa" type="text"   >
+            </div>
+            <button onclick="hellobuddy1()">Next</button>
+        </div>
+
+        <div id="slide4" class="slide4 none">
+            <h1>Direct RATES AS PER BELOW</h1>
+            <div class="values">
+                <h1>AGRA</h1>
+                <input id="agradirect" type="text" >
+            </div>
+            <div class="values">
+                <h1>Chandighar</h1>
+                <input id="chandighardirect" type="text"   >
+            </div>
+            <div class="values">
+                <h1>Damtal</h1>
+                <input id="damtaldirect" type="text"   >
+            </div>
+            <div class="values">
+                <h1>Dehradun</h1>
+                <input id="dehradundirect" type="text"   >
+            </div>
+            <div class="values">
+                <h1>Ex Plant</h1>
+                <input id="ExPlantdirect" type="text"   >
+            </div>
+            <div class="values">
+                <h1>Delhi</h1>
+                <input id="delhidirect" type="text"   >
+            </div>
+            <button onclick="hellobuddy2()">Next</button>
+        </div>
+
+        <div id="slide5" class="slide5 none">
+            <form id="costs">
+            <div class="tinPiece">    
+        <h1>Packing Cost Of Tin Below</h1>
+        <div class="values">
+        <h2><label for="packingCostTin">Packing Cost</label></h2>
+        <input type="number" id="packingCostTin"  required>
+        </div>
+        
+        <div class="values">
+        <h2><label for="intrestTin">Packing Cost</label></h2>
+        <input type="number" id="intrestTin" required  >
+        </div>  
+        </div>
+
+        <div class="PouchPiece">
+            <h1>Packing Cost Of Pouch Below</h1>
+            
+            <div class="values">
+                <h2><label for="packingCostPouch">Packing Cost</label></h2>
+            <input type="number" id="packingCostPouch" required >
+            </div>
+            
+            <div class="values">
+            <h2><label for="intrestPouch">Intrest</label></h2>
+            <input type="number" id="intrestPouch" required  >
+            </div>
+            </div>  
+            <button>Next</button>   
+        </form>
+    </div>
+
+    <div id="slide6" class="slide6 none">
+        <div class="agracfa">
+            <h1>Agra CFA</h1>
+            <h3>CFA RATE</h3>
+            <span id="cfaRate">kjdn</span>
+        </div>
+        
+        <div class="agraDirect">
+            <h1>Agra Direct</h1>
+            <h3>Direct Rate</h3>
+            <span id="directRate">kjh</span>
+        </div>
+    </div>
+    </div>
+
+    <script>
+         let agraFrigit = (document.getElementById('agraFrigit'))
+            let looseprice
+            let chandigharFrigit = (document.getElementById('chandigharFrigit'))
+            let damtalFrigit = (document.getElementById('damtalFrigit'))
+            let dehradunFrigit = (document.getElementById('dehradunFrigit'))
+            let ExPlantFrigit = (document.getElementById('ExPlantFrigit'))
+            let delhiFrigit = (document.getElementById('delhiFrigit'))
+         let agracfa = (document.getElementById('agracfa'))
+            let chandigharcfa = (document.getElementById('chandigharcfa'))
+            let damtalcfa = (document.getElementById('damtalcfa'))
+            let dehraduncfa = (document.getElementById('dehraduncfa'))
+            let ExPlantcfa = (document.getElementById('ExPlantcfa'))
+            let delhicfa = (document.getElementById('delhicfa'))
+             let packingCostTin = 1
+             let packingCostPouch = 1
+             let intrestTin = 1
+             let intrestPouch = 1
+             let agradirect = (document.getElementById('agradirect'))
+            let chandighardirect = (document.getElementById('chandighardirect'))
+            let damtaldirect = (document.getElementById('damtaldirect'))
+            let dehradundirect = (document.getElementById('dehradundirect'))
+            let ExPlantdirect = (document.getElementById('ExPlantdirect'))
+            let delhidirect = (document.getElementById('delhidirect'))
+
+            document.querySelector('#okok').addEventListener('submit' , (event) => {
+                
+            event.preventDefault()
+            document.querySelector('.slide1').classList.add('none')
+            document.querySelector('.slide2').classList.remove('none')
+            
+            looseprice = parseFloat(document.getElementById("looseprice").value)
+            agraFrigit.value = 1
+            chandigharFrigit.value = 2
+            damtalFrigit.value = 2.5
+            dehradunFrigit.value = 3
+            ExPlantFrigit.value = 0
+            delhiFrigit.value = 2.5
+            agracfa.value = 1
+            chandigharcfa.value = 2
+            damtalcfa.value = 2.5
+            dehraduncfa.value = 3
+            ExPlantcfa.value = 0
+            delhicfa.value = 2.5
+            agraFrigitvalue = 1
+            chandigharFrigitvalue = 2
+            damtalFrigitvalue = 2.5
+            dehradunFrigitvalue = 3
+            ExPlantFrigitvalue = 0
+            delhiFrigitvalue = 2.5
+            agradirect.value = 1
+            chandighardirect.value = 2
+            damtaldirect.value = 2.5
+            dehradundirect.value = 3
+            ExPlantdirect.value = 0
+            delhidirect.value = 2.5
+            })
+           
+            function hellobuddy(){
+                document.querySelector('.slide2').classList.add('none')
+                document.querySelector('.slide3').classList.remove('none')
+            }
+            function hellobuddy1(){
+                document.querySelector('.slide3').classList.add('none')
+                document.querySelector('.slide4').classList.remove('none')
+            }
+            function hellobuddy2(){
+                document.querySelector('.slide4').classList.add('none')
+                document.querySelector('.slide5').classList.remove('none')
+            }
+        
+            
+        
+        document.querySelector('#costs').addEventListener('submit' , (event) => {
+            document.querySelector('.slide5').classList.add('none')
+            document.querySelector('.slide6').classList.remove('none')
+            event.preventDefault()
+            packingCostTin = parseFloat(document.getElementById('packingCostTin').value)
+            packingCostPouch = parseFloat(document.getElementById('packingCostPouch').value)
+            intrestTin = parseFloat(document.getElementById('intrestTin').value)
+            intrestPouch = parseFloat(document.getElementById('intrestPouch').value)
+            
+            let cfacalculation = (15*looseprice + 15.94*agraFrigitvalue + packingCostTin + intrestTin)*5/100
+            console.log(cfacalculation)
+            let directcalculation = (15*looseprice + 15.94*agraFrigitvalue + packingCostTin + intrestTin)*5/100
+            const cfaRate = document.querySelector('#cfaRate')
+            const directRate = document.querySelector('#directRate')
+            cfaRate.innerText = cfacalculation
+            directRate.innerText = directcalculation    
+        })
+
+        
+       
+
+
+    </script>
+</body>
+</html>
