@@ -16,7 +16,7 @@
             margin: 0 auto;
             padding: 20px;
         }
-        input[type="text"], input[type="number"], button {
+        input[type="text"], input[type="text"], button {
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
@@ -63,7 +63,7 @@
         <form id="okok">
         <h1 id="date">HELLO</h1>
         <label id="hh" for="looseprice">Enter LOOSE PRICE OF TODAY</label>
-        <input required type="number" id="looseprice">
+        <input required type="text" id="looseprice">
         <button>NEXT</button>
         </form>
     </div>
@@ -97,31 +97,37 @@
             <button onclick="hellobuddy()">Next</button>
         </div>
 
+        <div class="selectoptions none">
+            <h1>select Options</h1>
+            <button onclick="fun()">CFA RATES</button>
+            <button onclick="fun2()">Direct Rates</button>
+        </div>
+        
         <div id="slide3" class="slide3 none">
             <h1>CFA RATES AS PER BELOW</h1>
             <div class="values">
                 <h1>AGRA</h1>
-                <input id="agracfa" type="text" >
+                <input id="agracfa" type="text" required >
             </div>
             <div class="values">
                 <h1>Chandighar</h1>
-                <input id="chandigharcfa" type="text"   >
+                <input id="chandigharcfa" type="text" required   >
             </div>
             <div class="values">
                 <h1>Damtal</h1>
-                <input id="damtalcfa" type="text"   >
+                <input id="damtalcfa" type="text" required   >
             </div>
             <div class="values">
                 <h1>Dehradun</h1>
-                <input id="dehraduncfa" type="text"   >
+                <input id="dehraduncfa" type="text" required   >
             </div>
             <div class="values">
                 <h1>Ex Plant</h1>
-                <input id="ExPlantcfa" type="text"   >
+                <input id="ExPlantcfa" type="text" required   >
             </div>
             <div class="values">
                 <h1>Delhi</h1>
-                <input id="delhicfa" type="text"   >
+                <input id="delhicfa" type="text" required   >
             </div>
             <button onclick="hellobuddy1()">Next</button>
         </div>
@@ -130,27 +136,27 @@
             <h1>Direct RATES AS PER BELOW</h1>
             <div class="values">
                 <h1>AGRA</h1>
-                <input id="agradirect" type="text" >
+                <input id="agradirect" type="text" required >
             </div>
             <div class="values">
                 <h1>Chandighar</h1>
-                <input id="chandighardirect" type="text"   >
+                <input id="chandighardirect" type="text" required   >
             </div>
             <div class="values">
                 <h1>Damtal</h1>
-                <input id="damtaldirect" type="text"   >
+                <input id="damtaldirect" type="text" required   >
             </div>
             <div class="values">
                 <h1>Dehradun</h1>
-                <input id="dehradundirect" type="text"   >
+                <input id="dehradundirect" type="text" required   >
             </div>
             <div class="values">
                 <h1>Ex Plant</h1>
-                <input id="ExPlantdirect" type="text"   >
+                <input id="ExPlantdirect" type="text" required   >
             </div>
             <div class="values">
                 <h1>Delhi</h1>
-                <input id="delhidirect" type="text"   >
+                <input id="delhidirect" type="text" required  >
             </div>
             <button onclick="hellobuddy2()">Next</button>
         </div>
@@ -161,12 +167,12 @@
         <h1>Packing Cost Of Tin Below</h1>
         <div class="values">
         <h2><label for="packingCostTin">Packing Cost</label></h2>
-        <input type="number" id="packingCostTin"  required>
+        <input type="text" id="packingCostTin"  required>
         </div>
         
         <div class="values">
-        <h2><label for="intrestTin">Packing Cost</label></h2>
-        <input type="number" id="intrestTin" required  >
+        <h2><label for="intrestTin">Intrest</label></h2>
+        <input type="text" id="intrestTin" required  >
         </div>  
         </div>
 
@@ -175,12 +181,12 @@
             
             <div class="values">
                 <h2><label for="packingCostPouch">Packing Cost</label></h2>
-            <input type="number" id="packingCostPouch" required >
+            <input type="text" id="packingCostPouch" required >
             </div>
             
             <div class="values">
             <h2><label for="intrestPouch">Intrest</label></h2>
-            <input type="number" id="intrestPouch" required  >
+            <input type="text" id="intrestPouch" required  >
             </div>
             </div>  
             <button>Next</button>   
@@ -188,7 +194,7 @@
     </div>
 
     <div id="slide6" class="slide6 none">
-        <div class="agracfa">
+        <div class="agraCfa">
             <h1>Agra CFA</h1>
             <h3>CFA RATE</h3>
             <span id="cfaRate">kjdn</span>
@@ -203,6 +209,7 @@
     </div>
 
     <script>
+        let a = false
          let agraFrigit = (document.getElementById('agraFrigit'))
             let looseprice
             let chandigharFrigit = (document.getElementById('chandigharFrigit'))
@@ -210,7 +217,7 @@
             let dehradunFrigit = (document.getElementById('dehradunFrigit'))
             let ExPlantFrigit = (document.getElementById('ExPlantFrigit'))
             let delhiFrigit = (document.getElementById('delhiFrigit'))
-         let agracfa = (document.getElementById('agracfa'))
+            let agracfa = (document.getElementById('agracfa'))
             let chandigharcfa = (document.getElementById('chandigharcfa'))
             let damtalcfa = (document.getElementById('damtalcfa'))
             let dehraduncfa = (document.getElementById('dehraduncfa'))
@@ -220,7 +227,7 @@
              let packingCostPouch = 1
              let intrestTin = 1
              let intrestPouch = 1
-             let agradirect = (document.getElementById('agradirect'))
+            let agradirect = (document.getElementById('agradirect'))
             let chandighardirect = (document.getElementById('chandighardirect'))
             let damtaldirect = (document.getElementById('damtaldirect'))
             let dehradundirect = (document.getElementById('dehradundirect'))
@@ -240,37 +247,52 @@
             dehradunFrigit.value = 3
             ExPlantFrigit.value = 0
             delhiFrigit.value = 2.5
-            agracfa.value = 1
-            chandigharcfa.value = 2
-            damtalcfa.value = 2.5
-            dehraduncfa.value = 3
-            ExPlantcfa.value = 0
-            delhicfa.value = 2.5
             agraFrigitvalue = 1
             chandigharFrigitvalue = 2
             damtalFrigitvalue = 2.5
             dehradunFrigitvalue = 3
             ExPlantFrigitvalue = 0
             delhiFrigitvalue = 2.5
-            agradirect.value = 1
-            chandighardirect.value = 2
-            damtaldirect.value = 2.5
-            dehradundirect.value = 3
-            ExPlantdirect.value = 0
-            delhidirect.value = 2.5
+            
             })
+
+           function fun(){
+            document.querySelector('.slide2').classList.add('none')
+            document.querySelector('.slide3').classList.remove('none')
+            document.querySelector('.selectoptions').classList.add('none')
+            document.querySelector(".agraDirect").classList.add('none')
+            }
+
+            function fun2(){
+                document.querySelector('.slide2').classList.add('none')
+                document.querySelector('.slide4').classList.remove('none')
+                document.querySelector('.selectoptions').classList.add('none')
+                document.querySelector(".agraCfa").classList.add('none')
+            }
            
             function hellobuddy(){
                 document.querySelector('.slide2').classList.add('none')
-                document.querySelector('.slide3').classList.remove('none')
+                document.querySelector('.selectoptions').classList.remove('none')
             }
             function hellobuddy1(){
                 document.querySelector('.slide3').classList.add('none')
-                document.querySelector('.slide4').classList.remove('none')
+                document.querySelector('.slide5').classList.remove('none')
+                agracfa = parseFloat(agracfa.value)
+                damtalcfa = parseFloat(damtalcfa.value)
+                delhicfa = parseFloat(delhicfa.value)
+                dehraduncfa = parseFloat(dehraduncfa.value)
+                ExPlantcfa = parseFloat(ExPlantcfa.value)
+                chandigharcfa = parseFloat(chandigharcfa.value)
             }
             function hellobuddy2(){
                 document.querySelector('.slide4').classList.add('none')
                 document.querySelector('.slide5').classList.remove('none')
+                agradirect = parseFloat(agradirect.value)
+                damtaldirect = parseFloat(damtaldirect.value)
+                delhidirect = parseFloat(delhidirect.value)
+                dehradundirect = parseFloat(dehradundirect.value)
+                ExPlantdirect = parseFloat(ExPlantdirect.value)
+                chandighardirect = parseFloat(chandighardirect.value)
             }
         
             
@@ -283,19 +305,15 @@
             packingCostPouch = parseFloat(document.getElementById('packingCostPouch').value)
             intrestTin = parseFloat(document.getElementById('intrestTin').value)
             intrestPouch = parseFloat(document.getElementById('intrestPouch').value)
-            
-            let cfacalculation = (15*looseprice + 15.94*agraFrigitvalue + packingCostTin + intrestTin)*5/100
+            console.log({agradirect , agracfa})
+            let cfacalculation = (15*looseprice + 15.94*agraFrigitvalue + agracfa + packingCostTin + intrestTin)*5/100
             console.log(cfacalculation)
-            let directcalculation = (15*looseprice + 15.94*agraFrigitvalue + packingCostTin + intrestTin)*5/100
+            let directcalculation = (15*looseprice + 15.94*agraFrigitvalue + agradirect + packingCostTin + intrestTin)*5/100
             const cfaRate = document.querySelector('#cfaRate')
             const directRate = document.querySelector('#directRate')
             cfaRate.innerText = cfacalculation
             directRate.innerText = directcalculation    
         })
-
-        
-       
-
 
     </script>
 </body>
