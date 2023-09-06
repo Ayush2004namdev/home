@@ -306,9 +306,9 @@
             intrestTin = parseFloat(document.getElementById('intrestTin').value)
             intrestPouch = parseFloat(document.getElementById('intrestPouch').value)
             console.log({agradirect , agracfa})
-            let cfacalculation = (15*looseprice + 15.94*agraFrigitvalue + agracfa + packingCostTin + intrestTin)*5/100
+            let cfacalculation = 15*looseprice + 15.94*agraFrigitvalue + agracfa + packingCostTin + intrestTin + (15*looseprice + 15.94*agraFrigitvalue + agracfa + packingCostTin + intrestTin)*5/100
             console.log(cfacalculation)
-            let directcalculation = (15*looseprice + 15.94*agraFrigitvalue + agradirect + packingCostTin + intrestTin)*5/100
+            let directcalculation = 1*looseprice + 0.97*agraFrigitvalue + agradirect + packingCostTin + intrestTin + (1*looseprice + 0.97*agraFrigitvalue + agradirect + packingCostTin + intrestTin)*5/100
             const cfaRate = document.querySelector('#cfaRate')
             const directRate = document.querySelector('#directRate')
             cfaRate.innerText = cfacalculation
